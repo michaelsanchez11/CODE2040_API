@@ -26,8 +26,8 @@ length = len(prefix)
 finalArray = []
 
 #printing the dictionary
-print fixedDict
-print '\n' 
+#print fixedDict
+#print '\n' 
 
 #the for loop if traversing through the array in out dictionary
 for i in range(len(fixedDict['array'])):
@@ -37,8 +37,17 @@ for i in range(len(fixedDict['array'])):
     	finalArray.append(fixedDict['array'][i])
 
 #printing the results
-print finalArray
-print prefix
+#print finalArray
+#print prefix
+
+#final results are being saved in a dictionary
+finalResult = {'token': '003a7f4e7bc0a73620257a90a5c6bc51' , 'array': finalArray}
+
+#finalRequest is posting the answer back
+finalRequest = requests.post('http://challenge.code2040.org/api/prefix/validate', json = finalResult)
+
+#testing the finalRequest result
+#print finalRequest.text
 
 
 
