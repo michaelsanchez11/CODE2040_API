@@ -23,4 +23,12 @@ indexval = haystackDict["haystack"].index(needle)
 #prints the index of the found value
 print indexval
 
+#final results are being saved in a dictionary
+finalResult = {'token': '003a7f4e7bc0a73620257a90a5c6bc51' , 'needle': indexval}
+
+#finalRequest is posting the answer back
+finalRequest = requests.post('http://challenge.code2040.org/api/haystack/validate', json = finalResult)
+
+#testing the finalRequest result
+#print finalRequest.text
 
